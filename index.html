@@ -1,0 +1,314 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blockspire Studios</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #f6c76b;
+  --green: #3fa34d;
+  --dark: #0f0d0b;
+  --stone: #2b241e;
+  --soft: #cfc6bb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background: radial-gradient(circle at top, #2f5675, #0c141c);
+  color: #eee;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(15,13,11,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #221d18;
+  z-index: 1000;
+}
+
+nav img {
+  height: 44px;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(246,199,107,0.25), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.9));
+  z-index: -1;
+}
+
+.hero img {
+  width: 190px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 30px rgba(246,199,107,0.6));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  font-size: 1.25rem;
+  color: #ddd;
+}
+
+.cta {
+  margin-top: 2.5rem;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--gold), #ffde9a);
+  color: #2a1d10;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 40px rgba(246,199,107,0.45);
+}
+
+/* SECTIONS */
+section {
+  padding: 6rem 2rem;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--gold);
+  margin-bottom: 3rem;
+}
+
+/* TEXT */
+.center-text {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--soft);
+}
+
+/* GRID */
+.grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: linear-gradient(to bottom, #2b241e, #191411);
+  border: 1px solid #352d26;
+  border-radius: 18px;
+  padding: 2.5rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+  color: var(--green);
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  color: #d2ccc3;
+  line-height: 1.6;
+}
+
+/* SERVICES */
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  background: #0b0908;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #aaa;
+  border-top: 1px solid #1f1914;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="logo.png" alt="Blockspire Studios">
+  <div>
+    <a href="#about">About</a>
+    <a href="#minecraft">Minecraft</a>
+    <a href="#games">Games</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <img src="logo.png" alt="Blockspire Studios Logo">
+    <h1>Blockspire Studios</h1>
+    <p>
+      We build Minecraft experiences, custom servers, and original games —
+      blending engineering, creativity, and world-class design.
+    </p>
+    <div class="cta">
+      <a href="#minecraft">What We Build</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Who We Are</h2>
+  <div class="center-text">
+    Blockspire Studios is a multidisciplinary studio specializing in
+    <strong>Minecraft server development</strong>, custom systems,
+    large-scale worlds, and original game projects.
+    <br><br>
+    We don’t just make things look good — we build them to scale, perform,
+    and keep players engaged long-term.
+  </div>
+</section>
+
+<section id="minecraft">
+  <h2>Minecraft Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Custom Servers</h3>
+      <p>
+        Fully custom Minecraft servers from the ground up —
+        unique mechanics, progression systems, and performance-optimized builds.
+      </p>
+      <span class="badge">Java • Paper • Fabric</span>
+    </div>
+
+    <div class="card">
+      <h3>Plugin Development</h3>
+      <p>
+        Bespoke plugins tailored to your server —
+        gameplay systems, admin tools, economies, minigames, and backend logic.
+      </p>
+      <span class="badge">Custom Code • APIs</span>
+    </div>
+
+    <div class="card">
+      <h3>World Design & Builds</h3>
+      <p>
+        High-quality Minecraft builds, hubs, adventure maps,
+        and large-scale environments designed for gameplay.
+      </p>
+      <span class="badge">WorldEdit • Custom Assets</span>
+    </div>
+
+    <div class="card">
+      <h3>Systems & Balancing</h3>
+      <p>
+        Skill trees, RPG systems, progression loops,
+        monetization-safe design, and long-term player retention.
+      </p>
+      <span class="badge">Live Ops Ready</span>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <h2>Games & Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Original Games</h3>
+      <p>
+        We are developing original games inspired by voxel worlds,
+        vertical exploration, and emergent gameplay systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Internal Tools</h3>
+      <p>
+        Proprietary tools for world generation, server management,
+        content pipelines, and rapid prototyping.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="center-text">
+    Interested in working with us or launching your next server?
+    <br><br>
+    <strong>contact@blockspirestudios.com</strong>
+  </div>
+</section>
+
+<footer>
+  © 2026 Blockspire Studios — Crafting worlds, one block at a time.
+</footer>
+
+</body>
+</html>
